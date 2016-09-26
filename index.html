@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    
+    #OT_Stuff, #NT_Stuff, #chapters, #T, #H, #G, #WP, #MAP, #MIP, #PL, #ML {
+      display: none;
+    }
+    
+  </style>
+  <script src="jsonp.js"></script>
+</head>
+<body>
+<!--  MAKE THE THINGS STEVEN!!!  -->
+  <div id = "OTandNT">
+    <div onclick = "HideNSeek('OTandNT', 'OT_Stuff')">OT</div>
+    <div onclick = "HideNSeek('OTandNT', 'NT_Stuff')">NT</div>
+  </div>
+  <div id = "OT_Stuff">
+    <div onclick = "HideNSeek('OT_Stuff','T')">Torah</div>
+    <div onclick = "HideNSeek('OT_Stuff','H')">History</div>
+    <div onclick = "HideNSeek('OT_Stuff','WP')">Wisdom/Poetry</div>
+    <div onclick = "HideNSeek('OT_Stuff','MAP')">Major Prophets</div>
+    <div onclick = "HideNSeek('OT_Stuff','MIP')">Minor Prophets</div>
+  </div>
+  <div id = "T">
+    <div onclick = "chapters('T', 50)">Genesis</div>
+    <div onclick = "chapters('T', 40)">Exodus</div>
+    <div onclick = "chapters('T',27)">Leviticus</div>
+    <div onclick = "chapters('T',36)">Numbers</div>
+    <div onclick = "chapters('T',34)">Deuteronomy</div>
+  </div>
+  <div id = "H">
+    <div onclick = "chapters('H',24)">Joshua</div>
+    <div onclick = "chapters('H',21)">Judges</div>
+    <div onclick = "chapters('H',4)">Ruth</div>
+    <div onclick = "chapters('H',31)">1 Samuel</div>
+    <div onclick = "chapters('H',24)">2 Samuel</div>
+    <div onclick = "chapters('H',22)">1 Kings</div>
+    <div onclick = "chapters('H',25)">2 Kings</div>
+    <div onclick = "chapters('H',29)">1 Chronicles</div>
+    <div onclick = "chapters('H',36)">2 Chronicles</div>
+    <div onclick = "chapters('H',10)">Ezra</div>
+    <div onclick = "chapters('H',13)">Nehemiah</div>
+    <div onclick = "chapters('H',10)">Esther</div>
+  </div>
+  <div id = "WP">
+    <div onclick = "chapters('WP',42)">Job</div>
+    <div onclick = "chapters('WP',150)">Psalms</div>
+    <div onclick = "chapters('WP',31)">Proverbs</div>
+    <div onclick = "chapters('WP',12)">Ecclesiastes</div>
+    <div onclick = "chapters('WP',8)">Song of Solomon</div>
+  </div>
+  <div id = "MAP">
+    <div onclick = "chapters('MAP',66)">Isaiah</div>
+    <div onclick = "chapters('MAP',52)">Jeremiah</div>
+    <div onclick = "chapters('MAP',5)">Lamentations</div>
+    <div onclick = "chapters('MAP',48)">Ezekiel</div>
+    <div onclick = "chapters('MAP',12)">Daniel</div>
+  </div>
+  <div id = "MIP">
+    <div onclick = "chapters('MIP',14)">Hosea</div>
+    <div onclick = "chapters('MIP',3)">Joel</div>
+    <div onclick = "chapters('MIP',9)">Amos</div>
+    <div onclick = "chapters('MIP',1)">Obadiah</div>
+    <div onclick = "chapters('MIP',4)">Jonah</div>
+    <div onclick = "chapters('MIP',7)">Micah</div>
+    <div onclick = "chapters('MIP',3)">Nahum</div>
+    <div onclick = "chapters('MIP',3)">Habakkuk</div>
+    <div onclick = "chapters('MIP',3)">Zephaniah</div>
+    <div onclick = "chapters('MIP',2)">Haggai</div>
+    <div onclick = "chapters('MIP',14)">Zechariah</div>
+    <div onclick = "chapters('MIP',4)">Malachi</div>
+  </div>
+  <!--  AIDAN'S STUFF  -->
+  <div id = "NT_Stuff">
+    <div onclick = "HideNSeek('NT_Stuff','G')">Gospels</div>
+    <div onclick = "chapters('NT_Stuff', 28)">Acts</div>
+    <div onclick = "HideNSeek('NT_Stuff','PL')">Paul's Letters</div>
+    <div onclick = "HideNSeek('NT_Stuff','ML')">Miscellaneous Letters</div>
+    <div onclick = "chapters('NT_Stuff', 22)">Revelation</div>
+  </div>
+  
+  <div id="G">
+    <div onclick="chapters('G', 28)">Matthew</div>
+    <div onclick="chapters('G', 16)">Mark</div>
+    <div onclick="chapters('G', 24)">Luke</div>
+    <div onclick="chapters('G', 21)">John</div>
+  </div>
+  
+  <div id="PL">
+    <div onclick="chapters('PL', 16)">Romans</div>
+    <div onclick="chapters('PL', 16)">1 Corinthians</div>
+    <div onclick="chapters('PL', 13)">2 Corinthians</div>
+    <div onclick="chapters('PL', 6)">Galatians</div>
+    <div onclick="chapters('PL', 6)">Ephesians</div>
+    <div onclick="chapters('PL', 4)">Philippians</div>
+    <div onclick="chapters('PL', 4)">Colossians</div>
+    <div onclick="chapters('PL', 5)">1 Thessalonians</div>
+    <div onclick="chapters('PL', 3)">2 Thessalonians</div>
+    <div onclick="chapters('PL', 6)">1 Timothy</div>
+    <div onclick="chapters('PL', 4)">2 Timothy</div>
+    <div onclick="chapters('PL', 3)">Titus</div>
+    <div onclick="chapters('PL', 1)">Philemon</div>
+    <div onclick="chapters('PL', 13)">Hebrews</div>
+  </div>
+  
+  <div id="ML">
+    <div onclick="chapters('ML', 5)">James</div>
+    <div onclick="chapters('ML', 5)">1 Peter</div>
+    <div onclick="chapters('ML', 3)">2 Peter</div>
+    <div onclick="chapters('ML', 5)">1 John</div>
+    <div onclick="chapters('ML', 1)">2 John</div>
+    <div onclick="chapters('ML', 1)">3 John</div>
+    <div onclick="chapters('ML', 1)">Jude</div>
+  </div>
+  
+  <div id="chapters">
+    
+  </div>
+  
+  <script>
+    var callback;
+    
+    function HideNSeek(hide, show) {
+      let h = document.getElementById(hide);
+      let s = document.getElementById(show);
+      
+      h.style.display  = "none";
+      s.style.display  = "block";
+    }
+    
+    function chapters(hide, length) {
+      const h = document.getElementById(hide);
+      h.style.display = "none";
+      
+      const chapters = document.getElementById('chapters');
+      chapters.innerHTML = "";
+      
+      for (let i = 1; i <= length; i+=1) {
+        chapters.insertAdjacentHTML('beforeend', `<div id="chapter${i}">${i}</div>`);
+      }
+      
+      chapters.style.display = "block";
+    }
+    
+    function getChapter() {
+      var chapters = document.getElementById('chapters');
+      chapters.style.display = "none";
+      
+      // provide URL
+      var reference = "Acts 15";
+      var version   = "nasb";
+      var url       = `https://getbible.net/json?passage=${ reference }&version=${ version }`;
+
+      // provide a callback function
+      callback = function(data) {
+        // for every verse in the chapter => insert it at the end of the body and add a new line
+        for ( verse in data.chapter ) {
+          document.body.insertAdjacentHTML('beforeend', data.chapter[verse].verse + '<br>');
+        }
+      }
+      
+      // make the request
+      $JSONP.GET(url, 'callback');
+    }
+    
+  </script>
+</body>
+</html>
