@@ -146,27 +146,6 @@
       chapters.style.display = "block";
     }
     
-    function getChapter() {
-      var chapters = document.getElementById('chapters');
-      chapters.style.display = "none";
-      
-      // provide URL
-      var reference = "Acts 15";
-      var version   = "nasb";
-      var url       = `https://getbible.net/json?passage=${ reference }&version=${ version }`;
-
-      // provide a callback function
-      callback = function(data) {
-        // for every verse in the chapter => insert it at the end of the body and add a new line
-        for ( verse in data.chapter ) {
-          document.body.insertAdjacentHTML('beforeend', data.chapter[verse].verse + '<br>');
-        }
-      }
-      
-      // make the request
-      $JSONP.GET(url, 'callback');
-    }
-    
   </script>
 </body>
 </html>
